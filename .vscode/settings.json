@@ -1,3 +1,9 @@
 {
-  "window.zoomLevel": 1.3
+    "window.zoomLevel": 1.3,
+    "code-runner.executorMap": {
+        "typescript": "npx ts-node --files"
+    },
+    "eslint.workingDirectories": [
+        {"directory": "C:/Users/nunes/Desktop/miniRPG", "mode": "auto"}
+    ]
 }
