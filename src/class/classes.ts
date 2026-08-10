@@ -1,41 +1,34 @@
-import { StatusMage } from "./status";
-import { Staff } from "./weapons";
+import { StatusWizard } from './status';
+import { Staff } from './weapons';
 
 
-class Mage {
-  private readonly className: string = "Mage";
-  private status: StatusMage = new StatusMage();
+// Wizard
+// ------------------------------------------------------
+class Wizard {
+  private readonly className: string = 'Wizard';
+  private status: StatusWizard = new StatusWizard();
   private weapon: Staff = new Staff();
 
-
-  showStatus(): string{
-    return this.formmatingShowStatus();
+  showInfos(): string {
+    return `\n
+    | --------------------------- |
+    |            ${this.className}           |
+    ${this.status.showStatus()}
+    ${this.weapon.showWeapon()}`
   }
 
   levelUp(): void {
     this.status.levelup();
   }
-
-  private formmatingShowStatus(): string{
-    return `\n
-    | --------------------------- |
-    |             ${this.className}            |
-    | ---------- Status --------- |
-    | Level: ${this.status.level}
-    | Life: ${this.status.life}
-    | Mana: ${this.status.mana}
-    | Physical Damage: ${this.status.damage.physicalDamage}
-    | Magic Damage: ${this.status.damage.magicDamage}
-    | Physical Defense: ${this.status.defense.physicalDefense}
-    | Magic Defense: ${this.status.defense.magicDefense}
-    | --------------------------- |\n`
-  }
 }
 
-const mage = new Mage();
+// -------------------------------------------------------
 
-console.log(mage.showStatus());
-mage.levelUp()
-console.log(mage.showStatus());
-mage.levelUp();
-console.log(mage.showStatus());
+// Testes
+const wizard = new Wizard();
+
+console.log(wizard.showInfos());
+wizard.levelUp();
+console.log(wizard.showInfos());
+wizard.levelUp();
+console.log(wizard.showInfos());

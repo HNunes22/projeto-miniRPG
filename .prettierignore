@@ -11,3 +11,4 @@ coverage
 **/.svn
 **/.hg
 **/node_modules
+**/diagram
