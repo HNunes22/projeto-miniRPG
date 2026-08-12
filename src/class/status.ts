@@ -13,51 +13,80 @@ export class Damage {
     public magicDamage: number,
   ) {}
 }
+// ------------------------------------------------
 
 // Interface
 
 interface Status {
+  className: string;
   level: number;
   life: number;
   mana: number;
   damage: Damage;
   defense: Defense;
-  levelup(): void;
-  showStatus(): string;
 }
+
+// ------------------------------------------------
+
+// Custumizer Type for all status class
+
+export type allClasses = StatusWizard | StatusArcher | StatusTank | StatusAssassin | StatusWarrior
+
+// ------------------------------------------------
 
 // Status by Class
 
 // Wizard
-//-----------------------------------------------
+
 export class StatusWizard implements Status {
-  level: number = 1;
-  life: number = 20;
-  mana: number = 100;
-  damage: Damage = new Damage(0, 150);
-  defense: Defense = new Defense(12, 15);
-
-  levelup(): void {
-    if (this.level !== 99) {
-      this.level++;
-      this.life += 20;
-      this.mana += 17;
-      this.defense.magicDefense += 7;
-      this.defense.physicalDefense += 4;
-      this.damage.magicDamage += 18;
-    }
-  }
-
-  showStatus(): string {
-    return `| ---------- Status --------- |
-    | Level: ${this.level}
-    | Life: ${this.life}
-    | Mana: ${this.mana}
-    | Physical Damage: ${this.damage.physicalDamage}
-    | Magic Damage: ${this.damage.magicDamage}
-    | Physical Defense: ${this.defense.physicalDefense}
-    | Magic Defense: ${this.defense.magicDefense}
-    | --------------------------- |\n`;
-  }
+  className = "Wizard";
+  level = 1;
+  life = 200;
+  mana = 50;
+  damage = new Damage(0, 30);
+  defense = new Defense(3, 3);
 }
-//-----------------------------------------------
+
+//Archer
+
+export class StatusArcher implements Status {
+  className = "Archer";
+  level = 1;
+  life = 200;
+  mana = 15;
+  damage = new Damage(75, 0);
+  defense = new Defense(10, 5);
+}
+
+// Tank
+
+export class StatusTank implements Status {
+  className = "Tank";
+  level = 1;
+  life = 700;
+  mana = 7;
+  damage = new Damage(15, 0);
+  defense = new Defense(70, 80);
+}
+
+// Assassin
+
+export class StatusAssassin implements Status {
+  className = "Assassin";
+  level = 1;
+  life = 250;
+  mana = 20;
+  damage = new Damage(100, 0);
+  defense = new Defense(20, 15);
+}
+
+// Warrior
+
+export class StatusWarrior implements Status {
+  className = "Warrior";
+  level = 1;
+  life = 400;
+  mana = 30;
+  damage = new Damage(60, 0);
+  defense = new Defense(50, 30);
+}

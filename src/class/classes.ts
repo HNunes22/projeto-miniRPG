@@ -1,34 +1,38 @@
-import { StatusWizard } from './status';
-import { Staff } from './weapons';
-
+import { StatusWizard, StatusArcher, StatusTank, StatusAssassin, StatusWarrior } from './status';
+import { Staff, Bow, Shield, Dagger, Sword } from './weapons';
+import { motorMethods } from "./methods"
 
 // Wizard
 // ------------------------------------------------------
 class Wizard {
-  private readonly className: string = 'Wizard';
-  private status: StatusWizard = new StatusWizard();
-  private weapon: Staff = new Staff();
+  private readonly className = 'Wizard';
+  private status = new StatusWizard();
+  private weapon = new Staff();
 
   showInfos(): string {
-    return `\n
-    | --------------------------- |
-    |            ${this.className}           |
-    ${this.status.showStatus()}
-    ${this.weapon.showWeapon()}`
+    return motorMethods.showInfos(this.status, this.weapon);
   }
 
   levelUp(): void {
-    this.status.levelup();
+    motorMethods.levelup(this.status);
   }
 }
 
-// -------------------------------------------------------
+// Archer
 
-// Testes
-const wizard = new Wizard();
+class Archer {
+  private readonly className: string = 'Archer';
+  private status = new StatusArcher();
+  private weapon = new Bow();
 
-console.log(wizard.showInfos());
-wizard.levelUp();
-console.log(wizard.showInfos());
-wizard.levelUp();
-console.log(wizard.showInfos());
+  showInfos(): string {
+    return motorMethods.showInfos(this.status, this.weapon);
+  }
+
+  levelUp(): void {
+    motorMethods.levelup(this.status);
+  }
+}
+
+// ------------------------------------------------------- //
+
