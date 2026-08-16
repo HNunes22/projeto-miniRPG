@@ -30,7 +30,8 @@ interface Status {
 
 // Custumizer Type for all status class
 
-export type allClasses = StatusWizard | StatusArcher | StatusTank | StatusAssassin | StatusWarrior
+export type allClasses =
+  StatusWizard | StatusArcher | StatusTank | StatusAssassin | StatusWarrior;
 
 // ------------------------------------------------
 
@@ -39,7 +40,7 @@ export type allClasses = StatusWizard | StatusArcher | StatusTank | StatusAssass
 // Wizard
 
 export class StatusWizard implements Status {
-  className = "Wizard";
+  className = 'Wizard';
   level = 1;
   life = 200;
   mana = 50;
@@ -50,7 +51,7 @@ export class StatusWizard implements Status {
 //Archer
 
 export class StatusArcher implements Status {
-  className = "Archer";
+  className = 'Archer';
   level = 1;
   life = 200;
   mana = 15;
@@ -61,7 +62,7 @@ export class StatusArcher implements Status {
 // Tank
 
 export class StatusTank implements Status {
-  className = "Tank";
+  className = 'Tank';
   level = 1;
   life = 700;
   mana = 7;
@@ -72,7 +73,7 @@ export class StatusTank implements Status {
 // Assassin
 
 export class StatusAssassin implements Status {
-  className = "Assassin";
+  className = 'Assassin';
   level = 1;
   life = 250;
   mana = 20;
@@ -83,7 +84,7 @@ export class StatusAssassin implements Status {
 // Warrior
 
 export class StatusWarrior implements Status {
-  className = "Warrior";
+  className = 'Warrior';
   level = 1;
   life = 400;
   mana = 30;

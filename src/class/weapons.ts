@@ -11,7 +11,7 @@ interface Weapon {
 
 // Custumizer Type for all weapons
 
-export type allWeapons = Staff| Bow | Shield | Dagger | Sword;
+export type allWeapons = Staff | Bow | Shield | Dagger | Sword;
 
 // -----------------------------------------------
 

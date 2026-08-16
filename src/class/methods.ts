@@ -1,15 +1,15 @@
-import {allClasses} from "./status";
-import {allWeapons} from "./weapons";
+import { allClasses } from './status';
+import { allWeapons } from './weapons';
 
 // Class Methods for Status
 class Methods_status {
   levelup(objStatus: allClasses): void {
-    if(objStatus.level !== 99){
-      objStatus.level++
+    if (objStatus.level !== 99) {
+      objStatus.level++;
     }
   }
 
-  showInfos(objStatus: allClasses, objWeapon: allWeapons): string{
+  showInfos(objStatus: allClasses, objWeapon: allWeapons): string {
     return `${this.showStatus(objStatus)}
     ${this.showWeapon(objWeapon)}`;
   }
@@ -27,11 +27,11 @@ class Methods_status {
   }
 
   private showWeapon(objWeapon: allWeapons): string {
-    return`| ---------- Weapon --------- |
+    return `| ---------- Weapon --------- |
     | Weapon Name: ${objWeapon.weaponName}
     | Physical Damage: ${objWeapon.weaponDamage.physicalDamage}
     | Magic Damage: ${objWeapon.weaponDamage.magicDamage}
-    | --------------------------- |\n`
+    | --------------------------- |\n`;
   }
 }
 

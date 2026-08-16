@@ -1,11 +1,16 @@
-import { StatusWizard, StatusArcher, StatusTank, StatusAssassin, StatusWarrior } from './status';
+import {
+  StatusWizard,
+  StatusArcher,
+  StatusTank,
+  StatusAssassin,
+  StatusWarrior,
+} from './status';
 import { Staff, Bow, Shield, Dagger, Sword } from './weapons';
-import { motorMethods } from "./methods"
+import { motorMethods } from './methods';
 
 // Wizard
 // ------------------------------------------------------
 class Wizard {
-  private readonly className = 'Wizard';
   private status = new StatusWizard();
   private weapon = new Staff();
 
@@ -21,7 +26,6 @@ class Wizard {
 // Archer
 
 class Archer {
-  private readonly className: string = 'Archer';
   private status = new StatusArcher();
   private weapon = new Bow();
 
@@ -37,7 +41,6 @@ class Archer {
 // Tank
 
 class Tank {
-  private readonly className: string = 'Tank';
   private status = new StatusTank();
   private weapon = new Shield();
 
@@ -53,7 +56,6 @@ class Tank {
 // Assassin
 
 class Assassin {
-  private readonly className: string = 'Assassin';
   private status = new StatusAssassin();
   private weapon = new Dagger();
 
@@ -69,7 +71,6 @@ class Assassin {
 // Warrior
 
 class Warrior {
-  private readonly className: string = 'Warrior';
   private status = new StatusWarrior();
   private weapon = new Sword();
 
@@ -82,5 +83,3 @@ class Warrior {
   }
 }
 // ------------------------------------------------------- //
-
-
